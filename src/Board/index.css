@@ -1,0 +1,23 @@
+.board-row :after{
+    clear: both;
+    content:"";
+    display: table;
+}
+.status{
+    margin: 10px 10px;
+}
+.board{
+    width: 150px;
+}
+.game-board{
+    margin: 0 auto;
+}
+.reset{
+    margin-top: 10px;
+    font-size: 15px;
+    width: 80px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid #999;
+    
+}
