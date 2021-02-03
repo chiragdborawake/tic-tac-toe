@@ -35,8 +35,8 @@ export default function Board() {
         return <Square value={squares[i]} winPosition={winPosition} handleClick={() => { handleClick(i) }} />;
     }
     var draw = true;
-    for(var i = 0;i<squares.length;i++){
-        if(squares[i] === null){
+    for (var i = 0; i < squares.length; i++) {
+        if (squares[i] === null) {
             draw = false;
         }
     }
@@ -45,13 +45,13 @@ export default function Board() {
     if (winner) {
         status = 'Winner: ' + winner;
     }
-    else if(draw){
+    else if (draw) {
         status = 'Game Draw';
     }
-     else {
+    else {
         status = 'Next player: ' + (xIsNext ? 'X' : 'O');
     }
-   
+
     return (
         <div className='board'>
             <div className='status'>
@@ -74,12 +74,12 @@ export default function Board() {
                 {renderSquare(7, winPosition[7])}
                 {renderSquare(8, winPosition[8])}
             </div>
-            {winner || draw ? (
-                <div><button className ='reset' onClick={() => {
+            {(winner || draw) && (
+                <div><button className='reset' onClick={() => {
                     setSquares(Array(9).fill(null));
                     setWinPosition(Array(9).fill(false));
                 }
-                }>Reset</button></div>) : ("")
+                }>Reset</button></div>)
             }
         </div>
     );
